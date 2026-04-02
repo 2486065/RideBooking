@@ -77,17 +77,19 @@ public class RideController {
     }
 
     // --- CUSTOMER: Get my rides ---
-    @GetMapping("/user/{userId}")
+    @GetMapping("/my-rides")
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('ADMIN')")
-    public ResponseEntity<List<RideResponse>> getRidesByUser(@PathVariable Long userId) {
+    public ResponseEntity<List<RideResponse>> getRidesByUser(
+            @RequestHeader("X-User-Id") Long userId) {
         List<RideResponse> rides = rideService.getRidesByUser(userId);
         return ResponseEntity.ok(rides);
     }
 
     // --- DRIVER: Get my assigned rides ---
-    @GetMapping("/driver/{driverId}")
+    @GetMapping("/my-rides/driver")
     @PreAuthorize("hasRole('DRIVER') or hasRole('ADMIN')")
-    public ResponseEntity<List<RideResponse>> getRidesByDriver(@PathVariable Long driverId) {
+    public ResponseEntity<List<RideResponse>> getRidesByDriver(
+            @RequestHeader("X-User-Id") Long driverId) {
         List<RideResponse> rides = rideService.getRidesByDriver(driverId);
         return ResponseEntity.ok(rides);
     }
