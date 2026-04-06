@@ -26,7 +26,7 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-.env
+
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -34,4 +34,4 @@ build/
 .vscode/
 
 # Environment variables
-
+.env

@@ -13,7 +13,7 @@ public interface AuthServiceClient {
     UserResponse getUserById(@PathVariable("userId") Long userId,
                              @RequestHeader("Authorization") String token);
 
-    @GetMapping("/api/users/profile/email/{email}")
+    @GetMapping("/api/users/email/{email}")
     UserResponse getUserByEmail(@PathVariable("email") String email,
                                 @RequestHeader("Authorization") String token);
 }
