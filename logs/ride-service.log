@@ -1,0 +1,84 @@
+2026-04-07 10:21:20 [restartedMain] INFO  c.cts.RideBookingServiceApplication - Starting RideBookingServiceApplication using Java 21 with PID 21304 (C:\Users\2486065\OneDrive - Cognizant\Documents\RideBooking\target\classes started by 2486065 in C:\Users\2486065\OneDrive - Cognizant\Documents\RideBooking)
+2026-04-07 10:21:20 [restartedMain] DEBUG c.cts.RideBookingServiceApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-04-07 10:21:20 [restartedMain] INFO  c.cts.RideBookingServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-07 10:21:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-07 10:21:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-07 10:21:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-07 10:21:23 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 435 ms. Found 1 JPA repository interface.
+2026-04-07 10:21:24 [restartedMain] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=3fe78bb0-7342-389b-875e-bce8df4a6dd1
+2026-04-07 10:21:25 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-04-07 10:21:25 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-04-07 10:21:26 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2026-04-07 10:21:26 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-07 10:21:26 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-04-07 10:21:26 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-07 10:21:26 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5625 ms
+2026-04-07 10:21:27 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-07 10:21:27 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-04-07 10:21:27 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-04-07 10:21:27 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-07 10:21:27 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-07 10:21:28 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73d06c70
+2026-04-07 10:21:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-07 10:21:30 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-07 10:21:30 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-07 10:21:30 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-07 10:21:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-07 10:21:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-04-07 10:21:32 [restartedMain] INFO  o.s.c.o.FeignClientFactoryBean - For 'AUTH-SERVICE' URL not provided. Will try picking an instance via load-balancing.
+2026-04-07 10:21:32 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: db69f80e-de87-474b-a6fc-850b676875da
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-07 10:21:33 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 6 endpoint(s) beneath base path '/actuator'
+2026-04-07 10:21:34 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c162ef2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ecca49c, org.springframework.security.web.context.SecurityContextHolderFilter@3f004e11, org.springframework.security.web.header.HeaderWriterFilter@2957e175, org.springframework.web.filter.CorsFilter@3d1ca3, org.springframework.security.web.authentication.logout.LogoutFilter@2deeca2b, com.cts.security.JwtAuthFilter@3e3eb1b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39e01cf5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fdeee8b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6382693a, org.springframework.security.web.session.SessionManagementFilter@54aabf36, org.springframework.security.web.access.ExceptionTranslationFilter@4a3e84d3, org.springframework.security.web.access.intercept.AuthorizationFilter@2d1258c0]
+2026-04-07 10:21:35 [restartedMain] INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2026-04-07 10:21:35 [restartedMain] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-04-07 10:21:35 [restartedMain] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2026-04-07 10:21:35 [restartedMain] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2026-04-07 10:21:35 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-04-07 10:21:36 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-04-07 10:21:36 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2026-04-07 10:21:36 [restartedMain] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-04-07 10:21:36 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1775537496677 with initial instances count: 0
+2026-04-07 10:21:36 [restartedMain] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application RIDE-SERVICE with eureka with status UP
+2026-04-07 10:21:36 [restartedMain] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1775537496690, current=UP, previous=STARTING]
+2026-04-07 10:21:36 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_RIDE-SERVICE/LTIN666312.cts.com:RIDE-SERVICE:8083: registering service...
+2026-04-07 10:21:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path ''
+2026-04-07 10:21:36 [restartedMain] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8083
+2026-04-07 10:21:36 [restartedMain] INFO  c.cts.RideBookingServiceApplication - Started RideBookingServiceApplication in 17.3 seconds (process running for 19.296)
+2026-04-07 10:21:36 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_RIDE-SERVICE/LTIN666312.cts.com:RIDE-SERVICE:8083 - registration status: 204
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2026-04-07 10:22:06 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2026-04-07 10:26:35 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-04-07 10:31:35 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-04-07 10:35:27 [http-nio-8083-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-07 10:35:27 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-07 10:35:27 [http-nio-8083-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/rides/book
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG com.cts.security.JwtAuthFilter - Authenticated user: customer@gmail.com with role: CUSTOMER
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/rides/book
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.RideController.bookRide(com.cts.dto.BookRideRequest,java.lang.String,org.springframework.security.core.Authentication); target is of class [com.cts.controller.RideController]
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.cts.controller.RideController.bookRide(com.cts.dto.BookRideRequest,java.lang.String,org.springframework.security.core.Authentication); target is of class [com.cts.controller.RideController]
+2026-04-07 10:35:27 [http-nio-8083-exec-1] INFO  com.cts.controller.RideController - POST /api/rides/book - User: customer@gmail.com
+2026-04-07 10:35:27 [http-nio-8083-exec-1] INFO  com.cts.service.RideService - Booking ride for user: customer@gmail.com from 'Chennai Central' to 'Navalur'
+2026-04-07 10:35:27 [http-nio-8083-exec-1] DEBUG com.cts.config.FeignClientConfig - Forwarding Authorization header to Feign request: /api/users/profile/email/customer%40gmail.com
+2026-04-07 10:35:27 [http-nio-8083-exec-1] ERROR c.c.exception.GlobalExceptionHandler - Feign client error calling Auth Service: [500] during [GET] to [http://AUTH-SERVICE/api/users/profile/email/customer%40gmail.com] [AuthServiceClient#getUserByEmail(String,String)]: [{"status":500,"message":"No static resource api/users/profile/email/customer%40gmail.com.","timestamp":"2026-04-07T10:35:27.7090566"}]
+2026-04-07 10:35:27 [http-nio-8083-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [feign.FeignException$InternalServerError: [500] during [GET] to [http://AUTH-SERVICE/api/users/profile/email/customer%40gmail.com] [AuthServiceClient#getUserByEmail(String,String)]: [{"status":500,"message":"No static resource api/users/profile/email/customer%40gmail.com.","timestamp":"2026-04-07T10:35:27.7090566"}]]
+2026-04-07 10:36:35 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2026-04-07 10:41:35 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

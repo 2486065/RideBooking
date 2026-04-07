@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestHeader;
 @FeignClient(name = "AUTH-SERVICE")
 public interface AuthServiceClient {
 
-    @GetMapping("/api/users/profile/{userId}")
+    @GetMapping("/api/users/{userId}")
     UserResponse getUserById(@PathVariable("userId") Long userId,
                              @RequestHeader("Authorization") String token);
 
-    @GetMapping("/api/users/profile/email/{email}")
+    @GetMapping("/api/users/email/{email}")
     UserResponse getUserByEmail(@PathVariable("email") String email,
                                 @RequestHeader("Authorization") String token);
 }
