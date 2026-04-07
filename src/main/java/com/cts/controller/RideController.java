@@ -122,6 +122,30 @@ public class RideController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Get my rides (Customer)", description = "Customer views all their booked rides")
+    @GetMapping("/my-rides")
+    @PreAuthorize("hasRole('CUSTOMER')")
+    public ResponseEntity<List<RideResponse>> getMyRides(
+            @RequestHeader("Authorization") String token,
+            Authentication authentication) {
+        String email = authentication.getName();
+        log.info("GET /api/rides/my-rides - Customer: {}", email);
+        List<RideResponse> rides = rideService.getMyRides(email, token);
+        return ResponseEntity.ok(rides);
+    }
+
+    @Operation(summary = "Get my rides (Driver)", description = "Driver views all their assigned rides")
+    @GetMapping("/my-rides/driver")
+    @PreAuthorize("hasRole('DRIVER')")
+    public ResponseEntity<List<RideResponse>> getMyDriverRides(
+            @RequestHeader("Authorization") String token,
+            Authentication authentication) {
+        String email = authentication.getName();
+        log.info("GET /api/rides/my-rides/driver - Driver: {}", email);
+        List<RideResponse> rides = rideService.getMyDriverRides(email, token);
+        return ResponseEntity.ok(rides);
+    }
+
     @Operation(summary = "Get ride by ID", description = "Any authenticated user can view a ride")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Ride found"),
