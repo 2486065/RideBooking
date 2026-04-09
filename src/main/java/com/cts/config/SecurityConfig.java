@@ -1,43 +1,71 @@
 package com.cts.config;
 
-import com.cts.security.JwtAuthFilter;
-import com.cts.security.JwtUtils;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter;
 
+import java.util.List;
+
+@Slf4j
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    private final JwtUtils jwtUtils;
-
-    public SecurityConfig(JwtUtils jwtUtils) {
-        this.jwtUtils = jwtUtils;
-    }
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // Allow Swagger and Actuator endpoints without auth
                         .requestMatchers(
-                                "/swagger-ui/**",
                                 "/swagger-ui.html",
-                                "/api-docs/**",
+                                "/swagger-ui/**",
                                 "/v3/api-docs/**",
+                                "/api-docs/**",
                                 "/actuator/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                .addFilterBefore(new JwtAuthFilter(jwtUtils), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(gatewayHeaderFilter(),
+                        AbstractPreAuthenticatedProcessingFilter.class);
 
         return http.build();
     }
-}
 
+    @Bean
+    public Filter gatewayHeaderFilter() {
+        return (ServletRequest req, ServletResponse res, FilterChain chain) -> {
+            HttpServletRequest request = (HttpServletRequest) req;
+
+            String userId = request.getHeader("X-User-Id");
+            String role = request.getHeader("X-User-Role");
+            String email = request.getHeader("X-User-Email");
+
+            log.debug("Incoming request - userId: {}, role: {}, email: {}", userId, role, email);
+
+            if (userId != null && role != null) {
+                SimpleGrantedAuthority authority =
+                        new SimpleGrantedAuthority("ROLE_" + role);
+                UsernamePasswordAuthenticationToken authToken =
+                        new UsernamePasswordAuthenticationToken(
+                                email, null, List.of(authority));
+                SecurityContextHolder.getContext().setAuthentication(authToken);
+            }
+
+            chain.doFilter(req, res);
+        };
+    }
+}

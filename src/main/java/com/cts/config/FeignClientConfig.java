@@ -20,14 +20,17 @@ public class FeignClientConfig {
                     (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             if (attributes != null) {
                 HttpServletRequest request = attributes.getRequest();
-                String authHeader = request.getHeader("Authorization");
-                if (authHeader != null) {
-                    template.header("Authorization", authHeader);
-                    log.debug("Forwarding Authorization header to Feign request: {}",
-                            template.url());
-                }
+
+                String userId = request.getHeader("X-User-Id");
+                String role = request.getHeader("X-User-Role");
+                String email = request.getHeader("X-User-Email");
+
+                if (userId != null) template.header("X-User-Id", userId);
+                if (role != null) template.header("X-User-Role", role);
+                if (email != null) template.header("X-User-Email", email);
+
+                log.debug("Forwarding gateway headers to Feign request: {}", template.url());
             }
         };
     }
 }
-
