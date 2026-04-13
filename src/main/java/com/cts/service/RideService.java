@@ -182,6 +182,24 @@ public class RideService {
                 .collect(Collectors.toList());
     }
 
+    // --- Get my rides (CUSTOMER - no userId needed) ---
+    public List<RideResponse> getMyRides(String email, String token) {
+        log.debug("Fetching rides for customer: {}", email);
+        UserResponse user = authServiceClient.getUserByEmail(email, token);
+        return rideRepository.findByUserIdOrderByCreatedAtDesc(user.getUserId())
+                .stream().map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
+    // --- Get my rides (DRIVER - no driverId needed) ---
+    public List<RideResponse> getMyDriverRides(String email, String token) {
+        log.debug("Fetching rides for driver: {}", email);
+        UserResponse driver = authServiceClient.getUserByEmail(email, token);
+        return rideRepository.findByDriverIdOrderByCreatedAtDesc(driver.getUserId())
+                .stream().map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
     // --- Private Helpers ---
 
     private Ride findRideOrThrow(Long rideId) {

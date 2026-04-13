@@ -20,7 +20,7 @@ public class SwaggerConfig {
                         .description("REST API for managing ride bookings in the Cab Booking System")
                         .version("1.0.0")
                         .contact(new Contact()
-                                .name("CTS Team")
+                                .name("CTS Team-4")
                                 .email("team@cts.com")))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
                 .components(new Components()
